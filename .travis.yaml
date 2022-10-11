@@ -11,17 +11,17 @@ before_script:
 script:
   - docker --version
   - docker build -t udagram-api-feed ./udagram-api-feed
-  - docker tag udagram-api-feed waer/udagram-api-feed:v1
+  - docker tag udagram-api-feed demyana/udagram-api-feed:v1
   - docker build -t udagram-api-user ./udagram-api-user
-  - docker tag udagram-api-user waer/udagram-api-user:v1
+  - docker tag udagram-api-user demyana/udagram-api-user:v1
   - docker build -t udagram-frontend ./udagram-frontend
-  - docker tag udagram-frontend waer/udagram-frontend:v1
+  - docker tag udagram-frontend demyana/udagram-frontend:v1
   - docker build -t reverseproxy ./udagram-reverseproxy
-  - docker tag reverseproxy waer/reverseproxy:v1
+  - docker tag reverseproxy demyana/reverseproxy:v1
 
 after_success:
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push waer/udagram-api-feed:v1
-  - docker push waer/udagram-api-user:v1
-  - docker push waer/udagram-frontend:v1
-  - docker push waer/reverseproxy:v1
+  - echo "$DOCKERPASS" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker push demyana/udagram-api-feed:v1
+  - docker push demyana/udagram-api-user:v1
+  - docker push demyana/udagram-frontend:v1
+  - docker push demyana/reverseproxy:v1

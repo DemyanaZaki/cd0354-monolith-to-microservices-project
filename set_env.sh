@@ -9,3 +9,6 @@ set AWS_REGION=us-east-1
 set AWS_PROFILE=default
 set JWT_SECRET=testing
 set URL=http://localhost:8100
+set DOCKERPASS=dckr_pat__-d3gMStAzSDdSaTHIWskAlCs-I
+set DOCKER_PASSWORD=
+set 
