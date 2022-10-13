@@ -1,8 +1,6 @@
 import AWS = require('aws-sdk');
 import {config} from './config/config';
 
-console.log(config);
-
 // Configure AWS
 const credentials = new AWS.SharedIniFileCredentials({profile: config.aws_profile});
 AWS.config.credentials = credentials;
@@ -12,8 +10,6 @@ export const s3 = new AWS.S3({
   region: config.aws_region,
   params: {Bucket: config.aws_media_bucket},
 });
-
-console.log(s3);
 
 // Generates an AWS signed URL for retrieving objects
 export function getGetSignedUrl( key: string ): string {
